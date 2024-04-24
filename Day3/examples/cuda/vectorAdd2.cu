@@ -10,7 +10,6 @@
  */
 
 #include <stdio.h>
-#include <time.h>
 
 // For the CUDA runtime routines (prefixed with "cuda_")
 #include <cuda_runtime.h>
@@ -27,19 +26,27 @@ __global__ void vectorAdd(const float *A, const float *B, float *C,
   int i = blockDim.x * blockIdx.x + threadIdx.x;
 
   if (i < numElements) {
-    C[i] = A[i] + B[i];
+    C[i] = A[i] + B[i] + 0.0f;
   }
 }
 
 /**
  * Host main routine
  */
-int main(void) {
+int main(int argc, char** argv)
+{
+  int numElements = 50000;
+  int block_size = 256;
+  int num_runs = 10;
+
   // Error code to check return values for CUDA calls
   cudaError_t err = cudaSuccess;
 
   // Print the vector length to be used, and compute its size
-  int numElements = 50000;
+  if (argc >= 2) numElements = atoi(argv[1]);
+  if (argc >= 3) block_size = atoi(argv[2]);
+  if (argc >= 4) num_runs = atoi(argv[3]);
+
   size_t size = numElements * sizeof(float);
   printf("[Vector addition of %d elements]\n", numElements);
 
@@ -97,8 +104,6 @@ int main(void) {
   // Copy the host input vectors A and B in host memory to the device input
   // vectors in
   // device memory
-  clock_t start = clock();
-
   printf("Copy input data from the host memory to the CUDA device\n");
   err = cudaMemcpy(d_A, h_A, size, cudaMemcpyHostToDevice);
 
@@ -119,7 +124,7 @@ int main(void) {
   }
 
   // Launch the Vector Add CUDA Kernel
-  int threadsPerBlock = 256;
+  int threadsPerBlock = block_size;
   int blocksPerGrid = (numElements + threadsPerBlock - 1) / threadsPerBlock;
   printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid,
          threadsPerBlock);
@@ -143,8 +148,6 @@ int main(void) {
             cudaGetErrorString(err));
     exit(EXIT_FAILURE);
   }
-  double t = (float)(clock() - start)/CLOCKS_PER_SEC;
-  printf("Elapsed time = %f sec\n", t);
 
   // Verify that the result vector is correct
   for (int i = 0; i < numElements; ++i) {
@@ -154,7 +157,18 @@ int main(void) {
     }
   }
 
-  printf("Test PASSED\n");
+  printf("Warming up test PASSED\n");
+
+  double elapsed = 0.0;
+
+  for (int i = 0; i < num_runs; i++) {
+    clock_t t = clock();
+    vectorAdd<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, numElements);
+    cudaDeviceSynchronize();
+    elapsed += (float)(clock() - t)/CLOCKS_PER_SEC;
+  }
+
+  printf("Average elapsed time: %f sec\n", elapsed/num_runs);
 
   // Free device global memory
   err = cudaFree(d_A);

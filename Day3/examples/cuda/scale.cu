@@ -59,11 +59,11 @@ int main(void) {
   }
 
   // Launch the Vector Add CUDA Kernel
-  int threadsPerBlock = 16;
+  int threadsPerBlock = 256;
   int blocksPerGrid = (numElements + threadsPerBlock - 1) / threadsPerBlock;
   printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid,
          threadsPerBlock);
-  scale<<<blocksPerGrid, threadsPerBlock>>>(d_x, k, numElements);
+  scale<<< blocksPerGrid, threadsPerBlock >>>(d_x, k, numElements);
   status = cudaGetLastError();
   if (status != cudaSuccess) {
     printf("error kernel launch: error code %d: %s\n", status, cudaGetErrorString(status));
