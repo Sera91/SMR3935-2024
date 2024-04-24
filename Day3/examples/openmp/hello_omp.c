@@ -24,16 +24,17 @@ int main(int argc, char **argv)
     tid=0;
 #if defined(_OPENMP)
 #pragma omp parallel default(none) private(tid) shared(nthreads)
+#endif
     {
+#if defined(_OPENMP)
         tid=omp_get_thread_num();
         nthreads=omp_get_num_threads();
-
+#endif
         printf("Hello World from thread: %d\n",tid);
         if (tid == 0) {
             printf("Number of active threads: %d\n", nthreads);
         }
     }
 
-#endif
     return 0;
 }
