@@ -1,10 +1,10 @@
 #!/bin/bash -l
 #SBATCH -A tra24_ictp_np
 #SBATCH -p boost_usr_prod
-#SBATCH --time 1:00:00       # format: HH:MM:SS
+#SBATCH --time 1:15:00       # format: HH:MM:SS
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=8
-#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-node=2
+#SBATCH --cpus-per-task=2
 #SBATCH --gpus-per-node=2
 #SBATCH --mem-per-cpu=10000
 #SBATCH --job-name=Jupylab
