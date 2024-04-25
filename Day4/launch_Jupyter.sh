@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --gpus-per-node=2
 #SBATCH --mem-per-cpu=10000
-#SBATCH --job-name=CDtutorial
+#SBATCH --job-name=Jupylab
 #SBATCH --output=jupyter_notebook.txt
 #SBATCH --error=jupyter_notebook.err
 
@@ -41,7 +41,7 @@ echo -e "
 #       Check jupyter_notebook_%j.err to find the port.
 
 # Command to create SSH tunnel:
-ssh  -o \'PreferredAuthentications=keyboard-interactive,password\' -o \'StrictHostKeyChecking=no\' -o \'UserKnownHostsFile=/dev/null\' -o \'LogLevel ERROR\'  -N -f -L  $portval:${node}:$portval ${user}@login.leonardo.cineca.it
+ssh  -o \"PreferredAuthentications=keyboard-interactive,password\" -o \"StrictHostKeyChecking=no\" -o \"UserKnownHostsFile=/dev/null\" -o \"LogLevel ERROR\"  -N -f -L  $portval:${node}:$portval ${user}@login.leonardo.cineca.it
 # Use a browser on your local machine to go to:
 http://localhost:$portval/
 "
