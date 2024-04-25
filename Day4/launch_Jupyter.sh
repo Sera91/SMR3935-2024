@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -A ict24_esp
+#SBATCH -A tra24_ictp_np
 #SBATCH -p boost_usr_prod
 #SBATCH --time 1:00:00       # format: HH:MM:SS
 #SBATCH -N 1
@@ -32,7 +32,7 @@ conda activate /leonardo/pub/userexternal/sdigioia/sdigioia/env/Gabenv
 XDG_RUNTIME_DIR=""
 node=$(hostname -s)
 user=$(whoami)
-portval=8887
+portval=88$(whoami | cut -b 7-9)
 
 # print tunneling instructions jupyter-log
 echo -e "
@@ -41,7 +41,7 @@ echo -e "
 #       Check jupyter_notebook_%j.err to find the port.
 
 # Command to create SSH tunnel:
-ssh -N -f -L $portval:${node}:$portval ${user}@$login.leonardo.cineca.it
+ssh -N -f -L  $portval:${node}:$portval ${user}@login.leonardo.cineca.it
 # Use a browser on your local machine to go to:
 http://localhost:$portval/
 "
