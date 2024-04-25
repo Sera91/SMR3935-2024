@@ -35,16 +35,16 @@ user=$(whoami)
 portval=88$(whoami | cut -b 7-9)
 
 # print tunneling instructions jupyter-log
-echo -e """
+echo -e "
 # Note: below 8888 is used to signify the port.
 #       However, it may be another number if 8888 is in use.
 #       Check jupyter_notebook_%j.err to find the port.
 
 # Command to create SSH tunnel:
-ssh  -o "PreferredAuthentications=keyboard-interactive,password" -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null" -o "LogLevel ERROR"  -N -f -L  $portval:${node}:$portval ${user}@login.leonardo.cineca.it
+ssh  -o \'PreferredAuthentications=keyboard-interactive,password\' -o \'StrictHostKeyChecking=no\' -o \'UserKnownHostsFile=/dev/null\' -o \'LogLevel ERROR\'  -N -f -L  $portval:${node}:$portval ${user}@login.leonardo.cineca.it
 # Use a browser on your local machine to go to:
 http://localhost:$portval/
-"""
+"
 
 jupyter-notebook --no-browser --ip=${node} --port=${portval}
 
