@@ -19,9 +19,10 @@ source $HOME/Conda_init.txt
 module load profile/deeplrn
 module load cuda/11.8
 module load gcc/11.3.0
-module load nccl
-module load llvm
-module load gsl
+module load openmpi/4.1.4--gcc--11.3.0-cuda-11.8  
+module load llvm/13.0.1--gcc--11.3.0-cuda-11.8  
+module load nccl/2.14.3-1--gcc--11.3.0-cuda-11.8
+module load gsl/2.7.1--gcc--11.3.0-omp
 
 
 
