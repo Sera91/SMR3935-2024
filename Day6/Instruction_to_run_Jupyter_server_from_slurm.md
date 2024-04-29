@@ -28,7 +28,7 @@ $ tail -10 /etc/services
 
 to print the PID type the following command on the local terminal:
 
-$ fuser 8888/tcp
+$ fuser 8881/tcp
 (this command will print the PID of the process listening the port in the format "8888/tcp:   PID")
 
 
