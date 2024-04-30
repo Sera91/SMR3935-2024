@@ -24,3 +24,8 @@ conda deactivate
 You can copy this env in your local scratch area using this command:
 
 conda create -c conda-forge --override-channels -p /leonardo_scratch/large/usertrain/$USER/env/SMR3935  --clone /leonardo/pub/userexternal/sdigioia/sdigioia/env/Gabenv
+
+pip install     --extra-index-url=https://pypi.nvidia.com     cudf-cu11==24.4.* dask-cudf-cu11==24.4.* cuml-cu11==24.4.*     cugraph-cu11==24.4.* cuspatial-cu11==24.4.* cuproj-cu11==24.4.*     cuxfilter-cu11==24.4.* cucim-cu11==24.4.* pylibraft-cu11==24.4.*     raft-dask-cu11==24.4.* cuvs-cu11==24.4.*
+
+
+conda create -c conda-forge --override-channels -p /leonardo/pub/userexternal/sdigioia/sdigioia/env/Gabenv2  --clone /leonardo_scratch/large/userexternal/sdigioia/CondaEnv/Gabenv
