@@ -1,17 +1,18 @@
 #!/bin/bash -l
 #SBATCH -A tra24_ictp_np
 #SBATCH -p boost_usr_prod
-#SBATCH --time 0:40:00       # format: HH:MM:SS
-#SBATCH -N 1
+#SBATCH --time 0:20:00       # format: HH:MM:SS
+#SBATCH -N 2
 #SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=1
-#SBATCH --gpus-per-node=0
+#SBATCH --cpus-per-task=2
+#SBATCH --gpus-per-node=4
 #SBATCH --mem-per-cpu=10000
 #SBATCH --job-name=dask-scheduler
-#SBATCH --output=scheduler_run.txt
-#SBATCH --error=scheduler_run.err
+#SBATCH --output=jupyter_notebook.txt
+#SBATCH --error=jupyter_notebook.err
 
 
+cd $SCRATCH/SMR-3935/Day4
 
 source $HOME/Conda_init.txt
 
@@ -28,7 +29,8 @@ module load gsl/2.7.1--gcc--11.3.0-omp
 conda activate /leonardo_scratch/large/usertrain/$USER/env/SMR3935
 
 
-dask-scheduler --scheduler-file $HOME/scheduler.json --port 8889 --dashboard-address 8781
+
+mpirun --np 8 dask-mpi --no-nanny --scheduler-file /home/$USER/scheduler.json 
 
 # keep it alive
 sleep 36000

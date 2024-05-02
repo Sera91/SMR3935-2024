@@ -1,0 +1,9 @@
+/leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/lib/python3.10/site-packages/distributed/cli/dask_scheduler.py:142: FutureWarning: dask-scheduler is deprecated and will be removed in a future release; use `dask scheduler` instead
+  warnings.warn(
+2024-05-02 00:04:02,990 - distributed.scheduler - INFO - -----------------------------------------------
+2024-05-02 00:04:11,797 - distributed.scheduler - INFO - State start
+2024-05-02 00:04:11,813 - distributed.scheduler - INFO - -----------------------------------------------
+2024-05-02 00:04:11,814 - distributed.scheduler - INFO -   Scheduler at:    tcp://10.10.0.135:8889
+2024-05-02 00:04:11,815 - distributed.scheduler - INFO -   dashboard at:  http://10.10.0.135:8781/status
+2024-05-02 00:04:11,819 - distributed.scheduler - INFO - Registering Worker plugin shuffle
+slurmstepd: error: *** JOB 4315375 ON lrdn3375 CANCELLED AT 2024-05-02T00:46:58 DUE TO TIME LIMIT ***

@@ -1,0 +1,37 @@
+[I 2024-05-02 00:03:58.695 ServerApp] Package notebook took 0.0000s to import
+[I 2024-05-02 00:04:07.192 ServerApp] Package dask_labextension took 8.4959s to import
+[W 2024-05-02 00:04:07.192 ServerApp] A `_jupyter_server_extension_points` function was not found in dask_labextension. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2024-05-02 00:04:07.864 ServerApp] Package jupyter_lsp took 0.6719s to import
+[W 2024-05-02 00:04:07.864 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2024-05-02 00:04:07.865 ServerApp] Package jupyter_server_proxy took 0.0000s to import
+[I 2024-05-02 00:04:08.085 ServerApp] Package jupyter_server_terminals took 0.2200s to import
+[I 2024-05-02 00:04:08.085 ServerApp] Package jupyterlab took 0.0000s to import
+[I 2024-05-02 00:04:20.711 ServerApp] Package notebook_shim took 0.0000s to import
+[W 2024-05-02 00:04:20.711 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2024-05-02 00:04:48.943 ServerApp] Package panel.io.jupyter_server_extension took 28.2241s to import
+[I 2024-05-02 00:04:48.943 ServerApp] dask_labextension | extension was successfully linked.
+[I 2024-05-02 00:04:48.943 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2024-05-02 00:04:48.944 ServerApp] jupyter_server_proxy | extension was successfully linked.
+[I 2024-05-02 00:04:48.949 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2024-05-02 00:04:48.953 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-05-02 00:04:48.958 ServerApp] notebook | extension was successfully linked.
+[I 2024-05-02 00:04:54.931 ServerApp] notebook_shim | extension was successfully linked.
+[I 2024-05-02 00:04:54.931 ServerApp] panel.io.jupyter_server_extension | extension was successfully linked.
+[I 2024-05-02 00:04:55.303 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2024-05-02 00:04:55.303 ServerApp] dask_labextension | extension was successfully loaded.
+[I 2024-05-02 00:04:55.305 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2024-05-02 00:04:55.389 ServerApp] jupyter_server_proxy | extension was successfully loaded.
+[I 2024-05-02 00:04:55.391 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2024-05-02 00:04:55.407 LabApp] JupyterLab extension loaded from /leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/lib/python3.10/site-packages/jupyterlab
+[I 2024-05-02 00:04:55.407 LabApp] JupyterLab application directory is /leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/share/jupyter/lab
+[I 2024-05-02 00:04:55.409 LabApp] Extension Manager is 'pypi'.
+[I 2024-05-02 00:04:55.410 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2024-05-02 00:04:55.417 ServerApp] notebook | extension was successfully loaded.
+[I 2024-05-02 00:04:55.417 ServerApp] panel.io.jupyter_server_extension | extension was successfully loaded.
+[I 2024-05-02 00:04:55.419 ServerApp] Serving notebooks from local directory: /leonardo_scratch/large/usertrain/a08tra81/last-clone/SMR3935-2024/Day9
+[I 2024-05-02 00:04:55.419 ServerApp] Jupyter Server 2.7.2 is running at:
+[I 2024-05-02 00:04:55.419 ServerApp] http://lrdn3363:8881/tree
+[I 2024-05-02 00:04:55.419 ServerApp]     http://127.0.0.1:8881/tree
+[I 2024-05-02 00:04:55.419 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2024-05-02 00:05:03.199 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+slurmstepd: error: *** JOB 4315371 ON lrdn3363 CANCELLED AT 2024-05-02T01:15:09 ***

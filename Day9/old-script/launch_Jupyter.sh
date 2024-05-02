@@ -3,14 +3,16 @@
 #SBATCH -p boost_usr_prod
 #SBATCH --time 1:15:00       # format: HH:MM:SS
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=2
-#SBATCH --gpus-per-node=1
+#SBATCH --gpus-per-node=2
 #SBATCH --mem-per-cpu=10000
 #SBATCH --job-name=Jupylab
 #SBATCH --output=jupyter_notebook.txt
 #SBATCH --error=jupyter_notebook.err
 
+
+cd $SCRATCH/SMR-3935/Day4
 
 source $HOME/Conda_init.txt
 
@@ -23,7 +25,9 @@ module load nccl/2.14.3-1--gcc--11.3.0-cuda-11.8
 module load gsl/2.7.1--gcc--11.3.0-omp
 
 
-conda activate /leonardo_scratch/large/usertrain/$USER/env/SMR3935
+
+conda activate /leonardo/pub/userexternal/sdigioia/sdigioia/env/Gabenv
+
 
 # get tunneling info
 XDG_RUNTIME_DIR=""

@@ -3,9 +3,9 @@
 #SBATCH -p boost_usr_prod
 #SBATCH --time 1:15:00       # format: HH:MM:SS
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=2
-#SBATCH --gpus-per-node=1
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=1
+#SBATCH --gpus-per-node=4
 #SBATCH --mem-per-cpu=10000
 #SBATCH --job-name=Jupylab
 #SBATCH --output=jupyter_notebook.txt
@@ -29,7 +29,7 @@ conda activate /leonardo_scratch/large/usertrain/$USER/env/SMR3935
 XDG_RUNTIME_DIR=""
 node=$(hostname -s)
 user=$(whoami)
-portval=88$(whoami | cut -b 7-9)
+portval=89$(whoami | cut -b 7-9)
 
 # print tunneling instructions jupyter-log
 echo -e "
