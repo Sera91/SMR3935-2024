@@ -1,0 +1,15 @@
+/leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/lib/python3.10/site-packages/dask/cli.py:100: UserWarning: While registering the command with name 'cuda', an exception ocurred; Could not find/load shared object file: libllvmlite.so
+ Error was: /leonardo/prod/spack/03/install/0.19/linux-rhel8-icelake/gcc-8.5.0/gcc-11.3.0-tm6phj7wkcw7cuy6gjixemkvh5x2mhza/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/lib/python3.10/site-packages/llvmlite/binding/../../../../libLLVM-14.so).
+  warnings.warn(
+Usage: dask [OPTIONS] COMMAND [ARGS]...
+Try 'dask -h' for help.
+
+Error: No such command 'cuda'.
+/leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/lib/python3.10/site-packages/dask/cli.py:100: UserWarning: While registering the command with name 'cuda', an exception ocurred; Could not find/load shared object file: libllvmlite.so
+ Error was: /leonardo/prod/spack/03/install/0.19/linux-rhel8-icelake/gcc-8.5.0/gcc-11.3.0-tm6phj7wkcw7cuy6gjixemkvh5x2mhza/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /leonardo_scratch/large/usertrain/a08tra81/env/SMR3935/lib/python3.10/site-packages/llvmlite/binding/../../../../libLLVM-14.so).
+  warnings.warn(
+Usage: dask [OPTIONS] COMMAND [ARGS]...
+Try 'dask -h' for help.
+
+Error: No such command 'cuda'.
+slurmstepd: error: *** JOB 4315514 ON lrdn3025 CANCELLED AT 2024-05-02T00:39:28 DUE TO TIME LIMIT ***
